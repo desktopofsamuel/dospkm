@@ -1,0 +1,11 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "dry"
+  },
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "talk",
+    "type": "Text"
+  }
+}

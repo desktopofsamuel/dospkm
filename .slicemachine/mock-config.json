@@ -2,7 +2,8 @@
   "_cts": {
     "post": {},
     "resource": {},
-    "landing": {}
+    "landing": {},
+    "category": {}
   },
   "slices": {
     "Hero": {},

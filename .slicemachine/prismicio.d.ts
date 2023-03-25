@@ -6,6 +6,30 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Category documents */
+interface CategoryDocumentData {
+    /**
+     * Name field in *Category*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: category.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    name: prismicT.KeyTextField;
+}
+/**
+ * Category document from Prismic
+ *
+ * - **API ID**: `category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CategoryDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CategoryDocumentData>, "category", Lang>;
 /** Content for Landing documents */
 interface LandingDocumentData {
     /**
@@ -49,27 +73,38 @@ interface PostDocumentData {
      */
     title: prismicT.KeyTextField;
     /**
-     * date field in *Post*
+     * Publication Date field in *Post*
      *
      * - **Field Type**: Date
      * - **Placeholder**: *None*
-     * - **API ID Path**: post.date
+     * - **API ID Path**: post.publication_date
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/date
      *
      */
-    date: prismicT.DateField;
+    publication_date: prismicT.DateField;
     /**
-     * Tag field in *Post*
+     * Featured Image field in *Post*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.featured_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    featured_image: prismicT.ImageField<never>;
+    /**
+     * Category field in *Post*
      *
      * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
-     * - **API ID Path**: post.tag
+     * - **API ID Path**: post.category
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    tag: prismicT.RelationField;
+    category: prismicT.RelationField<"category">;
     /**
      * Slice Zone field in *Post*
      *
@@ -144,6 +179,28 @@ interface ResourceDocumentData {
      */
     date: prismicT.DateField;
     /**
+     * Type field in *Resource*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource.type
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    type: prismicT.SelectField<"Article" | "Book" | "Documentary" | "Game" | "Guideline" | "Platform" | "Plugin" | "Podcast" | "Tool" | "Typeface" | "Video">;
+    /**
+     * Category field in *Resource*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: resource.category
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField<"category">;
+    /**
      * Slice Zone field in *Resource*
      *
      * - **Field Type**: Slice Zone
@@ -159,7 +216,7 @@ interface ResourceDocumentData {
  * Slice for *Resource → Slice Zone*
  *
  */
-type ResourceDocumentDataSlicesSlice = HeroSlice;
+type ResourceDocumentDataSlicesSlice = TextblockSlice;
 /**
  * Resource document from Prismic
  *
@@ -170,7 +227,7 @@ type ResourceDocumentDataSlicesSlice = HeroSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type ResourceDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ResourceDocumentData>, "resource", Lang>;
-export type AllDocumentTypes = LandingDocument | PostDocument | ResourceDocument;
+export type AllDocumentTypes = CategoryDocument | LandingDocument | PostDocument | ResourceDocument;
 /**
  * Primary content in Hero → Primary
  *
@@ -274,6 +331,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { LandingDocumentData, LandingDocumentDataSlicesSlice, LandingDocument, PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, ResourceDocumentData, ResourceDocumentDataSlicesSlice, ResourceDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, TextblockSliceDefaultItem, TextblockSliceDefault, TextblockSliceVariation, TextblockSlice };
+        export type { CategoryDocumentData, CategoryDocument, LandingDocumentData, LandingDocumentDataSlicesSlice, LandingDocument, PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, ResourceDocumentData, ResourceDocumentDataSlicesSlice, ResourceDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, TextblockSliceDefaultItem, TextblockSliceDefault, TextblockSliceVariation, TextblockSlice };
     }
 }
