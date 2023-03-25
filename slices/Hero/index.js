@@ -1,5 +1,6 @@
 import React from 'react'
 import { PrismicImage, PrismicRichText } from '@prismicio/react'
+import { PrismicNextImage } from '@prismicio/next'
 
 /**
  * @typedef {import("@prismicio/client").Content.HeroSlice} HeroSlice
@@ -22,7 +23,7 @@ const Hero = ({ slice }) => (
     }
     {
       slice.primary.image? 
-      <PrismicImage field={slice.primary.image}/> : <></>
+      <PrismicNextImage field={slice.primary.image}/> : <></>
     }
     
     <style jsx>{`

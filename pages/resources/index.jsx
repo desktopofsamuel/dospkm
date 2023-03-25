@@ -11,11 +11,10 @@ export default function ResourceIndexPage({ pagedata }) {
       {console.log(pagedata)}
       {pagedata.map((post) => (
         <div key={post.uid}>
-          <PrismicLink field={post.data.url}>
-            <PrismicImage field={post.data.image} />
-
+          <Link href={post.url}>
+            { post.data.image ? <PrismicImage field={post.data.image} /> : "" }
             <h2>{post.data.title}</h2>
-          </PrismicLink>{" "}
+          </Link>
         </div>
       ))}
     </>
