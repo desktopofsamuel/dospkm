@@ -70,7 +70,23 @@ interface PostDocumentData {
      *
      */
     tag: prismicT.RelationField;
+    /**
+     * Slice Zone field in *Post*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PostDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Post → Slice Zone*
+ *
+ */
+type PostDocumentDataSlicesSlice = TextblockSlice;
 /**
  * Post document from Prismic
  *
@@ -258,6 +274,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { LandingDocumentData, LandingDocumentDataSlicesSlice, LandingDocument, PostDocumentData, PostDocument, ResourceDocumentData, ResourceDocumentDataSlicesSlice, ResourceDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, TextblockSliceDefaultItem, TextblockSliceDefault, TextblockSliceVariation, TextblockSlice };
+        export type { LandingDocumentData, LandingDocumentDataSlicesSlice, LandingDocument, PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, ResourceDocumentData, ResourceDocumentDataSlicesSlice, ResourceDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, TextblockSliceDefaultItem, TextblockSliceDefault, TextblockSliceVariation, TextblockSlice };
     }
 }

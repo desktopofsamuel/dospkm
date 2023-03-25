@@ -1,17 +1,17 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "tell"
+    "value": "planet"
   },
   "title": {
     "__TYPE__": "FieldContent",
-    "value": "year",
+    "value": "lucky",
     "type": "Text"
   },
   "date": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2021-03-31"
+    "value": "2016-11-11"
   },
   "tag": {
     "__TYPE__": "LinkContent",
@@ -19,5 +19,40 @@
       "__TYPE__": "DocumentLink",
       "id": "mock_document_id"
     }
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "textblock$0ee27f6a-c0a2-4eea-9adb-1a6122c533c3",
+        "name": "textblock",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {},
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "richtext",
+                  {
+                    "__TYPE__": "StructuredTextContent",
+                    "value": [
+                      {
+                        "type": "paragraph",
+                        "content": {
+                          "text": "Esse est exercitation sint. Pariatur cupidatat velit duis incididunt enim. Aute in nisi veniam id ipsum et ea ea."
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
   }
 }

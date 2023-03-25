@@ -18,6 +18,10 @@ const routes = [
     type: 'resource',
     path: '/resources/:uid',
   },
+  {
+    type: 'post',
+    path: '/guides/:uid',
+  },
 ]
 
 /**

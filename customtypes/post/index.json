@@ -32,6 +32,17 @@
           "label": "Tag",
           "select": "document"
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "textblock": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

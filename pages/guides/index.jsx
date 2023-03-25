@@ -13,7 +13,6 @@ export default function ResourceIndexPage({ pagedata }) {
         <div key={post.uid}>
           <PrismicLink field={post.data.url}>
             <PrismicImage field={post.data.image} />
-
             <h2>{post.data.title}</h2>
           </PrismicLink>{" "}
         </div>
@@ -24,7 +23,7 @@ export default function ResourceIndexPage({ pagedata }) {
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData });
-  const pagedata = await client.getAllByType("resource");
+  const pagedata = await client.getAllByType("post");
   return {
     props: {
       pagedata,
