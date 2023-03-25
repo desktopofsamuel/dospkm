@@ -1,0 +1,28 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {},
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "richtext",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Sit et elit occaecat. Ut amet anim minim ad."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

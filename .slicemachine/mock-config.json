@@ -1,0 +1,16 @@
+{
+  "_cts": {
+    "post": {},
+    "resource": {},
+    "landing": {}
+  },
+  "slices": {
+    "Hero": {},
+    "Textblock": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
+  }
+}

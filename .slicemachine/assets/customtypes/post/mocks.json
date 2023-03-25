@@ -1,0 +1,23 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "tell"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "year",
+    "type": "Text"
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2021-03-31"
+  },
+  "tag": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
+  }
+}
