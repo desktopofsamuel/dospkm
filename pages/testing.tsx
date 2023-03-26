@@ -1,10 +1,10 @@
 import { SliceZone } from '@prismicio/react'
-
+import Layout from '@/components/Layout'
 import { createClient } from '../prismicio'
 import { components } from '../slices'
 
 export default function Page({ page }) {
-  return <SliceZone slices={page.data.slices} components={components} />
+  return <Layout><SliceZone slices={page.data.slices} components={components} /></Layout>
 }
 
 export async function getStaticProps({ previewData }) {

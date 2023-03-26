@@ -3,13 +3,16 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../../slices";
+import Layout from "@/components/Layout";
 
 /** @param {import("next").InferGetStaticPropsType<typeof getStaticProps>} */
 export default function Page({ article }) {
   /** @type {import('schema-dts').Article} */
-  {console.log(article)}
+  {
+    console.log(article);
+  }
 
-  const schema = {  
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.data.title ? article.data.title : "",
@@ -19,30 +22,34 @@ export default function Page({ article }) {
       // The full URL must be provided, including the website's domain.
       url: "https://juxtdesign.cc",
     },
-    image: article.data.featured_image ? prismicH.asImageSrc(article.data.featured_image) : "",
+    image: article.data.featured_image
+      ? prismicH.asImageSrc(article.data.featured_image)
+      : "",
     datePublished: article.data.publication_date,
     dateModified: article.last_publication_date,
   };
 
   return (
-    <div>
+    <>
       <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       </Head>
-      <main>
-        <p>
-          The following schema has been added to the <code>&lt;head&gt;</code>{" "}
-          of this page:
-        </p>
-        <pre>
-          <code>{JSON.stringify(schema, null, 4)}</code>
-        </pre>
-        <SliceZone slices={article.data.slices} components={components} />
-      </main>
-    </div>
+      <Layout>
+        <main>
+          <p>
+            The following schema has been added to the <code>&lt;head&gt;</code>{" "}
+            of this page:
+          </p>
+          <pre>
+            <code>{JSON.stringify(schema, null, 4)}</code>
+          </pre>
+          <SliceZone slices={article.data.slices} components={components} />
+        </main>
+      </Layout>
+    </>
   );
 }
 

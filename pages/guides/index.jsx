@@ -3,12 +3,13 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import Link from "next/link";
+import Layout from "@/components/Layout"
 
 export default function GuideIndexPage({ pagedata }) {
   return (
-    <>
+    <Layout>
       <h1>Hello</h1>
-      {console.log(pagedata)}
+      {/* {console.log(pagedata)} */}
       {pagedata.map((post) => (
         <div key={post.uid}>
             <Link href={post.url}>
@@ -16,7 +17,7 @@ export default function GuideIndexPage({ pagedata }) {
             </Link>
         </div>
       ))}
-    </>
+    </Layout>
   );
 }
 

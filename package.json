@@ -10,6 +10,10 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.17",
+    "@chakra-ui/react": "^2.5.3",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@prismicio/client": "^6.7.3",
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^1.0.3",
@@ -20,6 +24,7 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "framer-motion": "^10.9.1",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

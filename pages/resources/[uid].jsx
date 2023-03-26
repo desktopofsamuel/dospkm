@@ -2,13 +2,14 @@ import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
+import Layout from "@/components/Layout"
 
 export default function Page({ page }) {
   return (
-    <>
+    <Layout>
       <h1>{page.data.title}</h1>
       <SliceZone slices={page.data.slices} components={components} />
-    </>
+    </Layout>
   );
 }
 
