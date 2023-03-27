@@ -4,20 +4,14 @@ import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import Link from "next/link";
 import Layout from "@/components/Layout"
+import ListResource from "@/components/ListResource"
+import { Heading } from "@chakra-ui/react";
 
 export default function ResourceIndexPage({ pagedata }) {
   return (
     <Layout>
-      <h1>Hello</h1>
-      {console.log(pagedata)}
-      {pagedata.map((post) => (
-        <div key={post.uid}>
-          <Link href={post.url}>
-            { post.data.image ? <PrismicImage field={post.data.image} /> : "" }
-            <h2>{post.data.title}</h2>
-          </Link>
-        </div>
-      ))}
+      <Heading>Hello</Heading>
+      <ListResource items={pagedata}/>
     </Layout>
   );
 }

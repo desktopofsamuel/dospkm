@@ -1,5 +1,6 @@
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
+import { Box, Text } from "@chakra-ui/react";
 
 /**
  * @typedef {import("@prismicio/client").Content.TextblockSlice} TextblockSlice
@@ -7,21 +8,9 @@ import { PrismicRichText } from "@prismicio/react";
  * @param { TextblockProps }
  */
 const Textblock = ({ slice }) => (
-  <section>
-    {slice?.items?.map((item, i) => (
-      <PrismicRichText field={item.richtext} />
-    ))}
-    <style jsx>{`
-      section {
-        max-width: 600px;
-        margin: 4em auto;
-        text-align: center;
-      }
-      .title {
-        color: #8592e0;
-      }
-    `}</style>
-  </section>
+  <Box><Text> {slice?.items?.map((item, i) => (
+    <PrismicRichText key={item.uid} field={item.richtext} />
+  ))}</Text></Box>
 );
 
 export default Textblock;

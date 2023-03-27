@@ -29,7 +29,7 @@ export default function NavBar() {
         <Flex as="nav" alignItems="center">
           <Link href="/">
             <Text fontFamily="heading" cursor="pointer" variant="noeffect">
-              Desktop of Samuel
+              Garden
             </Text>
           </Link>
           <Spacer />
@@ -42,9 +42,6 @@ export default function NavBar() {
             gap="4"
             fontFamily="heading"
           >
-            <ListItem>
-              <Link href="/testing">Home</Link>
-            </ListItem>
             <ListItem>
               <Link href="/guides">Guides</Link>
             </ListItem>
@@ -80,9 +77,6 @@ export default function NavBar() {
                 textAlign="center"
                 alignItems="center"
               >
-                <ListItem>
-                  <Link href="/testing">Home</Link>
-                </ListItem>
                 <ListItem>
                   <Link href="/guides">Guides</Link>
                 </ListItem>

@@ -22,6 +22,10 @@ const routes = [
     type: 'post',
     path: '/guides/:uid',
   },
+  {
+    type: 'category',
+    path: '/tags/:uid',
+  },
 ]
 
 /**
